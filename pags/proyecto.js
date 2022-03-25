@@ -1,5 +1,3 @@
-
-
 const btn1 = document.querySelector(`.btn1`)
 btn1.addEventListener(`click`, () => {
 
@@ -26,6 +24,10 @@ btn1.addEventListener(`click`, () => {
     row.appendChild(colDni)
     lista.appendChild(row)
     celularesGuardados.push(datos1)
+    Toastify({
+        text: "se agrego exitosamete",
+        duration: 1500,
+    }).showToast()
 })
 
 const btn2 = document.querySelector(`.btn2`)
@@ -53,6 +55,10 @@ btn2.addEventListener(`click`, () => {
     row.appendChild(colDni)
     lista.appendChild(row)
     celularesGuardados.push(datos2)
+    Toastify({
+        text: "se agrego exitosamete",
+        duration: 1500,
+    }).showToast()
 })
 
 const btn3 = document.querySelector(`.btn3`)
@@ -80,6 +86,10 @@ btn3.addEventListener(`click`, () => {
     row.appendChild(colDni)
     lista.appendChild(row)
     celularesGuardados.push(datos3)
+    Toastify({
+        text: "se agrego exitosamete",
+        duration: 1500,
+    }).showToast()
 })
 
 const btn4 = document.querySelector(`.btn4`)
@@ -107,9 +117,14 @@ btn4.addEventListener(`click`, () => {
     row.appendChild(colDni)
     lista.appendChild(row)
     celularesGuardados.push(datos4)
+    Toastify({
+        text: "se agrego exitosamete",
+        duration: 1500,
+    }).showToast()
 })
 
 const celularesGuardados = []
+
 
 
 
@@ -128,12 +143,12 @@ boton.addEventListener(`click`, () => {
         direccion: direccion
 
     }
+   
     const prueba = nombre == `` || apellido == `` || email == `` || direccion == `` || false
-    prueba ? alert("debe llenar todos los datos") : localStorage.setItem(`datos`, JSON.stringify(datosPersonas))
-
-
+    prueba ? alert(`debe llenar los datos`)  : localStorage.setItem(`datos`, JSON.stringify(datosPersonas))
+  
     formatear.reset()
-
+    
 
 })
 
@@ -168,4 +183,17 @@ detalles.addEventListener(`click`, () => {
         listaProducto.innerHTML = celularesGuardados[i].nombre
         listaCompras.appendChild(listaProducto)
     }
+})
+const finalizar = document.getElementById(`finalizar`)
+finalizar.addEventListener(`click`, () => {
+
+    Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'GRACIAS POR SU COMPRA!',
+        text: `Su pedido esta activo`,
+        showConfirmButton: false,
+        timer: 3000,
+    })
+   
 })
