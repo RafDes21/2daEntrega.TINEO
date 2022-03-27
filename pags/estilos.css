@@ -7,6 +7,7 @@
 }
 body{
     background-color: #71a89a;
+    width: 100%;
 }
 
 header {
@@ -35,21 +36,13 @@ header {
     .card {
         justify-content: center;
         align-items: center;
-        margin: 4% 20%;
+        margin: 4% 10%;
     }
    
 
 }
 
-@media screen and (max-width:360px) {
-    .card {
-        justify-content: center;
-        align-items: center;
-        margin: 4% 5%;
-    }
-   
 
-}
 
 .datos{
     background-image:url(fondoForm.jpg);

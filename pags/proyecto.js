@@ -1,132 +1,63 @@
-const btn1 = document.querySelector(`.btn1`)
-btn1.addEventListener(`click`, () => {
+function nombreCelulares(marca, modelo, serie, cantidad) {
 
-    const datos1 = {
-        nombre: "Iphone",
-        apellido: "A32",
-        dni: "071525"
+    const celular = {
+        marca: marca,
+        modelo: modelo,
+        serie: serie,
+        cantidad: cantidad
     }
+
 
     const lista = document.getElementById(`lista`)
     const row = document.createElement(`tr`)
 
-    const colNombre = document.createElement(`td`)
-    const colApellido = document.createElement(`td`)
-    const colDni = document.createElement(`td`)
+    const colMarca = document.createElement(`td`)
+    const colModelo = document.createElement(`td`)
+    const colSerie = document.createElement(`td`)
+    const colCantidad = document.createElement(`td`)
 
-    colNombre.innerText = datos1.nombre
-    colApellido.innerText = datos1.apellido
-    colDni.innerText = datos1.dni
+    colMarca.innerText = marca
+    colModelo.innerText = modelo
+    colSerie.innerText = serie
+    colCantidad.innerText = cantidad
 
-
-    row.appendChild(colNombre)
-    row.appendChild(colApellido)
-    row.appendChild(colDni)
+    row.appendChild(colMarca)
+    row.appendChild(colModelo)
+    row.appendChild(colSerie)
+    row.appendChild(colCantidad)
     lista.appendChild(row)
-    celularesGuardados.push(datos1)
+    celularesGuardados.push(celular)
+
     Toastify({
         text: "se agrego exitosamete",
         duration: 1500,
     }).showToast()
+}
+
+const celularesGuardados = []
+
+const btn1 = document.querySelector(`.btn1`)
+
+btn1.addEventListener(`click`, () => {
+    nombreCelulares("IPHONE", "A32", "09897", 1)
+
 })
 
 const btn2 = document.querySelector(`.btn2`)
 btn2.addEventListener(`click`, () => {
+    nombreCelulares("SAMSUNG", "A32", "00811", 1)
 
-    const datos2 = {
-        nombre: "Samsung",
-        apellido: "A32",
-        dni: "02323"
-    }
-    const lista = document.getElementById(`lista`)
-    const row = document.createElement(`tr`)
-
-    const colNombre = document.createElement(`td`)
-    const colApellido = document.createElement(`td`)
-    const colDni = document.createElement(`td`)
-
-    colNombre.innerText = datos2.nombre
-    colApellido.innerText = datos2.apellido
-    colDni.innerText = datos2.dni
-
-
-    row.appendChild(colNombre)
-    row.appendChild(colApellido)
-    row.appendChild(colDni)
-    lista.appendChild(row)
-    celularesGuardados.push(datos2)
-    Toastify({
-        text: "se agrego exitosamete",
-        duration: 1500,
-    }).showToast()
 })
 
 const btn3 = document.querySelector(`.btn3`)
 btn3.addEventListener(`click`, () => {
-
-    const datos3 = {
-        nombre: "Motorola",
-        apellido: "G9Power",
-        dni: "982635"
-    }
-    const lista = document.getElementById(`lista`)
-    const row = document.createElement(`tr`)
-
-    const colNombre = document.createElement(`td`)
-    const colApellido = document.createElement(`td`)
-    const colDni = document.createElement(`td`)
-
-    colNombre.innerText = datos3.nombre
-    colApellido.innerText = datos3.apellido
-    colDni.innerText = datos3.dni
-
-
-    row.appendChild(colNombre)
-    row.appendChild(colApellido)
-    row.appendChild(colDni)
-    lista.appendChild(row)
-    celularesGuardados.push(datos3)
-    Toastify({
-        text: "se agrego exitosamete",
-        duration: 1500,
-    }).showToast()
+    nombreCelulares("MOTOROLA", "G9 POWER", "00811", 1)
 })
 
 const btn4 = document.querySelector(`.btn4`)
 btn4.addEventListener(`click`, () => {
-
-    const datos4 = {
-        nombre: "LG",
-        apellido: "XT-615",
-        dni: "00234"
-    }
-    const lista = document.getElementById(`lista`)
-    const row = document.createElement(`tr`)
-
-    const colNombre = document.createElement(`td`)
-    const colApellido = document.createElement(`td`)
-    const colDni = document.createElement(`td`)
-
-    colNombre.innerText = datos4.nombre
-    colApellido.innerText = datos4.apellido
-    colDni.innerText = datos4.dni
-
-
-    row.appendChild(colNombre)
-    row.appendChild(colApellido)
-    row.appendChild(colDni)
-    lista.appendChild(row)
-    celularesGuardados.push(datos4)
-    Toastify({
-        text: "se agrego exitosamete",
-        duration: 1500,
-    }).showToast()
+    nombreCelulares("LG", "XT-615", "00811", 1)
 })
-
-const celularesGuardados = []
-
-
-
 
 const boton = document.getElementById(`guardar`)
 boton.addEventListener(`click`, () => {
@@ -143,12 +74,12 @@ boton.addEventListener(`click`, () => {
         direccion: direccion
 
     }
-   
+
     const prueba = nombre == `` || apellido == `` || email == `` || direccion == `` || false
-    prueba ? alert(`debe llenar los datos`)  : localStorage.setItem(`datos`, JSON.stringify(datosPersonas))
-  
+    prueba ? alert(`debe llenar los datos`) : localStorage.setItem(`datos`, JSON.stringify(datosPersonas))
+
     formatear.reset()
-    
+
 
 })
 
@@ -180,7 +111,7 @@ detalles.addEventListener(`click`, () => {
     for (let i = 0; i < celularesGuardados.length; i++) {
 
         const listaProducto = document.createElement(`li`)
-        listaProducto.innerHTML = celularesGuardados[i].nombre
+        listaProducto.innerHTML = celularesGuardados[i].marca
         listaCompras.appendChild(listaProducto)
     }
 })
@@ -195,5 +126,5 @@ finalizar.addEventListener(`click`, () => {
         showConfirmButton: false,
         timer: 3000,
     })
-   
+
 })
