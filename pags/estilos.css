@@ -16,6 +16,47 @@ header {
     text-shadow: 2px 2px 2px white;
     font-family: 'Dosis', sans-serif;
 }
+.clima{
+    display: flex;
+width: 100%;
+height: 50px;
+
+}
+@media screen and (max-width:768px) {
+    .clima{
+        
+    width: 100%;
+    height: 200px;
+   }
+}
+.cajasClima{
+    width: 100%;
+    height: 50px;
+}
+.col-md-4{
+    display:block;
+    
+    width: 100%;
+}
+.clim{
+    width: 40%;
+    display: contents;
+    font-size: 20px;
+    align-items: center;
+   
+}
+#icono-animado{
+    height: 60px;
+    width: 70px;
+}
+#caja1 {
+    padding: 10px;
+    padding-left:50px
+}
+#caja3{
+    padding: 10px;
+}
+
 
 .main {
     background-image: url(fondoCel.jpg);

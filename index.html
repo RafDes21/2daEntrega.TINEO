@@ -16,6 +16,25 @@
     <header>
         <h1 class="text-center pt-5">TIENDA ONLINE</h1>
     </header>
+     <!-- //datos del clima - Inicio-->
+     <div id="container-fluid " class="clima">
+         <div class="row cajasClima">
+        <div id="caja1" class="col-md-4">
+            <h1 class="clim" id="temperatura-valor"></h1>
+            <h3 class="clim" id="temperatura-descripcion"></h3>
+            
+        </div>
+        <div id="caja2" class="col-md-4">
+            <h2 class="clim c2" id="ubicacion"></h2>
+            <img  id="icono-animado" src="" alt="">
+        </div>
+        <div id="caja3" class="col-md-4">
+            <h3 class="clim">veloc. de viento</h3>
+            <h1 class="clim" id="viento-velocidad"></h1>
+        </div>
+    </div>
+    </div>
+    <!-- //datos del clima - Final-->
     <div class="container-fluid py-5 main">
 
         <div class="row">
@@ -34,6 +53,7 @@
                     </div>
                 </div>
             </div>
+           
             <div class="col-sm">
                 <div class="card" style="width: 18rem;">
                     <img src="img/celular.png" class="card-img-top" alt="...">
@@ -83,20 +103,21 @@
     </div>
 
 
-    <table id="lista" class="table">
-
+    <table class="table">
         <tr class="thead-dark">
             <th class="pl-5">Nombre</th>
             <th>Modelo</th>
-            <th>N°de Serie</th>
+            <th>ID</th>
             <th>cantidad</th>
-            
         </tr>
-
     </table>
+    <table id="lista" class="table">
+    </table>
+
+
     <div class="datos">
 
-        <form action="mailto:israeltineo84@gmail.com" method="post" id="formatear">
+        <form action="" method="" id="formatear">
             <h2 class="text-center my-4">Datos para el envío</h2>
             <label class="formNombre" for="nombre">Nombre</label>
             <input type="text" name="nombre" placeholder="Ingrese su Nombre" id="nombre" required>
