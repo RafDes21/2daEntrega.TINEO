@@ -16,23 +16,23 @@
     <header>
         <h1 class="text-center pt-5">TIENDA ONLINE</h1>
     </header>
-     <!-- //datos del clima - Inicio-->
-     <div id="container-fluid " class="clima">
-         <div class="row cajasClima">
-        <div id="caja1" class="col-md-4">
-            <h1 class="clim" id="temperatura-valor"></h1>
-            <h3 class="clim" id="temperatura-descripcion"></h3>
-            
+    <!-- //datos del clima - Inicio-->
+    <div id="container-fluid " class="clima">
+        <div class="row cajasClima">
+            <div id="caja1" class="col-md-4">
+                <h1 class="clim text-center" id="temperatura-valor"></h1>
+                <h3 class="clim text-center" id="temperatura-descripcion"></h3>
+
+            </div>
+            <div id="caja2" class="col-md-4">
+                <h2 class="clim c2 text-center" id="ubicacion"></h2>
+                <img cass="text-center"id="icono-animado" src="" alt="">
+            </div>
+            <div id="caja3" class="col-md-4">
+                <h3 class="clim text-center">veloc. de viento</h3>
+                <h1 class="clim text-center" id="viento-velocidad"></h1>
+            </div>
         </div>
-        <div id="caja2" class="col-md-4">
-            <h2 class="clim c2" id="ubicacion"></h2>
-            <img  id="icono-animado" src="" alt="">
-        </div>
-        <div id="caja3" class="col-md-4">
-            <h3 class="clim">veloc. de viento</h3>
-            <h1 class="clim" id="viento-velocidad"></h1>
-        </div>
-    </div>
     </div>
     <!-- //datos del clima - Final-->
     <div class="container-fluid py-5 main">
@@ -50,15 +50,16 @@
                             <li>Vídeos: 4k.</li>
                         </ul>
                         <input class="btn1 btn-primary" type="button" value="AGREGAR">
+                        <input id="btn-eliminar" type="button" value="eliminar">
                     </div>
                 </div>
             </div>
-           
+
             <div class="col-sm">
                 <div class="card" style="width: 18rem;">
                     <img src="img/celular.png" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title text-center">CSAMSUNG A32</h5>
+                        <h5 class="card-title text-center">SAMSUNG A32</h5>
                         <ul>
                             <li>Pantalla: 5 pulgadas.</li>
                             <li>Camara frontal: 12px. </li>
@@ -66,6 +67,7 @@
                             <li>Vídeos: 4k.</li>
                         </ul>
                         <input class="btn2 btn-primary" type="button" value="AGREGAR">
+                        <input id="btn-eliminar1" type="button" value="eliminar">
                     </div>
                 </div>
             </div>
@@ -81,6 +83,7 @@
                             <li>Vídeos: 4k.</li>
                         </ul>
                         <input class="btn3 btn-primary" type="button" value="AGREGAR">
+                        <input id="btn-eliminar2" type="button" value="eliminar">
                     </div>
                 </div>
             </div>
@@ -96,6 +99,7 @@
                             <li>Vídeos: 4k.</li>
                         </ul>
                         <input class="btn4 btn-primary" type="button" value="AGREGAR">
+                        <input id="btn-eliminar3" type="button" value="eliminar">
                     </div>
                 </div>
             </div>
@@ -105,13 +109,14 @@
 
     <table class="table">
         <tr class="thead-dark">
-            <th class="pl-5">Nombre</th>
-            <th>Modelo</th>
-            <th>ID</th>
-            <th>cantidad</th>
+            <th class="">Nombre</th>
+            <th class="text-center">Modelo</th>
+            <th class="id text-center">ID</th>
+            <th class="cantidad text-center">cantidad</th>
         </tr>
     </table>
     <table id="lista" class="table">
+
     </table>
 
 

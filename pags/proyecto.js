@@ -24,6 +24,23 @@ function renderResumen() {
     })
 }
 
+function nombreMenos(marca, modelo, id, cantidad) {
+    const celular = {
+        marca: marca,
+        modelo: modelo,
+        id: id,
+        cantidad: cantidad
+    }
+    const posicion = celularesGuardados.findIndex(celular => celular.id === id);
+    console.log(posicion)
+    if (posicion > -1) {
+        const celularActualizado = celularesGuardados[posicion];
+        celularActualizado.cantidad -= 1;
+        celularesGuardados[posicion] = celularActualizado;
+    }
+    renderResumen()
+}
+
 function nombreCelulares(marca, modelo, id, cantidad) {
     const celular = {
         marca: marca,
@@ -48,6 +65,38 @@ function nombreCelulares(marca, modelo, id, cantidad) {
         duration: 1500,
     }).showToast()
 }
+
+const btnEliminar = document.getElementById(`btn-eliminar`)
+btnEliminar.addEventListener(`click`, () => {
+  
+        nombreMenos("IPHONE", "A32", "001", 1)
+    
+    
+})
+const btnEliminar1 = document.getElementById(`btn-eliminar1`)
+btnEliminar1.addEventListener(`click`, () => {
+    
+        nombreMenos("SAMSUNG", "A32", "002", 1)
+    
+  
+})
+const btnEliminar2 = document.getElementById(`btn-eliminar2`)
+btnEliminar2.addEventListener(`click`, () => {
+    
+        nombreMenos("MOTOROLA", "G9 POWER", "003", 1)
+    
+   
+})
+const btnEliminar3 = document.getElementById(`btn-eliminar3`)
+btnEliminar3.addEventListener(`click`, () => {
+  
+        nombreMenos("LG", "XT-615", "004", 1)
+    
+   
+})
+
+
+
 
 const btn1 = document.querySelector(`.btn1`)
 
