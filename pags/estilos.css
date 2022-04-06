@@ -11,10 +11,8 @@ body{
 }
 
 header {
-    background-color: rgb(58, 54, 54);
-    height: 150px;
-    text-shadow: 2px 2px 2px white;
-    font-family: 'Dosis', sans-serif;
+   
+  font-family: 'Dosis', sans-serif;
 }
 .id{
     width: 250px;
@@ -62,7 +60,7 @@ height: 50px;
 
 
 .main {
-    background-image: url(fondoCel.jpg);
+    background-image: url(../img/fondoForm.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -118,16 +116,19 @@ height: 50px;
  }
 
 .datos{
-    background-image:url(fondoForm.jpg);
-    height: 550px;
-    padding-top: 50px;
+    background-image: url(../img/fondoMatrix.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 60px 0;
+ 
 }
 form {
-    width: 70%;
-    margin: 0 18%;
+    width: 40%;
+    margin: 0 30%;
     background-image: linear-gradient(#1f4037, #99f2c8);
     border-radius: 10px;
-    height: 450px;
+    height: 470px;
     display: flex;
     flex-direction: column;
 }

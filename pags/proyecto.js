@@ -1,5 +1,27 @@
 const celularesGuardados = []
 
+function mensaje(text) {
+    Toastify({
+        text: text,
+        duration: 1500,
+        position: "center",
+        style: {
+            background: "red",
+        }
+
+    }).showToast()
+}
+
+function mensajeGuardar(title) {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'success',
+        title: title,
+        showConfirmButton: false,
+        timer: 3000,
+    })
+}
+
 function renderResumen() {
     const lista = document.getElementById(`lista`)
     lista.innerHTML = ''
@@ -33,23 +55,35 @@ function nombreMenos(marca, modelo, id, cantidad) {
     }
     const posicion = celularesGuardados.findIndex(celular => celular.id === id);
     console.log(posicion)
+
     if (posicion > -1) {
+
         const celularActualizado = celularesGuardados[posicion];
+
         celularActualizado.cantidad -= 1;
+
         celularesGuardados[posicion] = celularActualizado;
+
+
+    }
+    if (celularesGuardados[posicion].cantidad === 0) {
+        celularesGuardados.splice(posicion)
     }
     renderResumen()
+
+
 }
 
-function nombreCelulares(marca, modelo, id, cantidad) {
+function nombreCelulares(marca, modelo, id, cantidad, precio) {
     const celular = {
         marca: marca,
         modelo: modelo,
         id: id,
-        cantidad: cantidad
+        cantidad: cantidad,
+        precio: precio
     }
     const posicion = celularesGuardados.findIndex(celular => celular.id === id);
-    console.log(posicion)
+
     if (posicion > -1) {
         const celularActualizado = celularesGuardados[posicion];
         celularActualizado.cantidad += 1;
@@ -68,31 +102,31 @@ function nombreCelulares(marca, modelo, id, cantidad) {
 
 const btnEliminar = document.getElementById(`btn-eliminar`)
 btnEliminar.addEventListener(`click`, () => {
-  
-        nombreMenos("IPHONE", "A32", "001", 1)
-    
-    
+
+    nombreMenos("IPHONE", "A32", "1", 1, 1800)
+
+
 })
 const btnEliminar1 = document.getElementById(`btn-eliminar1`)
 btnEliminar1.addEventListener(`click`, () => {
-    
-        nombreMenos("SAMSUNG", "A32", "002", 1)
-    
-  
+
+    nombreMenos("SAMSUNG", "A32", "2", 1, 1800)
+
+
 })
 const btnEliminar2 = document.getElementById(`btn-eliminar2`)
 btnEliminar2.addEventListener(`click`, () => {
-    
-        nombreMenos("MOTOROLA", "G9 POWER", "003", 1)
-    
-   
+
+    nombreMenos("MOTOROLA", "G9 POWER", "3", 1, 1800)
+
+
 })
 const btnEliminar3 = document.getElementById(`btn-eliminar3`)
 btnEliminar3.addEventListener(`click`, () => {
-  
-        nombreMenos("LG", "XT-615", "004", 1)
-    
-   
+
+    nombreMenos("LG", "XT-615", "4", 1, 1800)
+
+
 })
 
 
@@ -101,23 +135,23 @@ btnEliminar3.addEventListener(`click`, () => {
 const btn1 = document.querySelector(`.btn1`)
 
 btn1.addEventListener(`click`, () => {
-    nombreCelulares("IPHONE", "A32", "001", 1)
+    nombreCelulares("IPHONE", "A32", "1", 1, 1800)
 
 })
 
 const btn2 = document.querySelector(`.btn2`)
 btn2.addEventListener(`click`, () => {
-    nombreCelulares("SAMSUNG", "A32", "002", 1)
+    nombreCelulares("SAMSUNG", "A32", "2", 1, 1800)
 })
 
 const btn3 = document.querySelector(`.btn3`)
 btn3.addEventListener(`click`, () => {
-    nombreCelulares("MOTOROLA", "G9 POWER", "003", 1)
+    nombreCelulares("MOTOROLA", "G9 POWER", "3", 1, 1800)
 })
 
 const btn4 = document.querySelector(`.btn4`)
 btn4.addEventListener(`click`, () => {
-    nombreCelulares("LG", "XT-615", "004", 1)
+    nombreCelulares("LG", "XT-615", "4", 1, 1800)
 })
 
 const boton = document.getElementById(`guardar`)
@@ -137,7 +171,7 @@ boton.addEventListener(`click`, () => {
     }
 
     const prueba = nombre == `` || apellido == `` || email == `` || direccion == `` || false
-    prueba ? alert(`debe llenar los datos`) : localStorage.setItem(`datos`, JSON.stringify(datosPersonas))
+    prueba ? mensaje("debe llenar todos los datos") : localStorage.setItem(`datos`, JSON.stringify(datosPersonas), mensajeGuardar('REGISTRO CON EXITO!!'))
 
     formatear.reset()
 
@@ -172,7 +206,8 @@ detalles.addEventListener(`click`, () => {
     for (let i = 0; i < celularesGuardados.length; i++) {
 
         const listaProducto = document.createElement(`li`)
-        listaProducto.innerHTML = celularesGuardados[i].marca
+        listaProducto.innerHTML = `${celularesGuardados[i].cantidad} uni. ${celularesGuardados[i].marca} = $. ${celularesGuardados[i].precio * celularesGuardados[i].cantidad} Pesos.`
+
         listaCompras.appendChild(listaProducto)
     }
 })
@@ -187,6 +222,8 @@ finalizar.addEventListener(`click`, () => {
         showConfirmButton: false,
         timer: 3000,
     })
+
+
 
 })
 
