@@ -1,4 +1,6 @@
+//array, funciones, clases--Inicio
 const celularesGuardados = []
+const total = []
 
 function mensaje(text) {
     Toastify({
@@ -14,7 +16,7 @@ function mensaje(text) {
 
 function mensajeGuardar(title) {
     Swal.fire({
-        position: 'top-center',
+        position: 'center',
         icon: 'success',
         title: title,
         showConfirmButton: false,
@@ -47,31 +49,22 @@ function renderResumen() {
 }
 
 function nombreMenos(marca, modelo, id, cantidad) {
-    const celular = {
-        marca: marca,
-        modelo: modelo,
-        id: id,
-        cantidad: cantidad
-    }
+
     const posicion = celularesGuardados.findIndex(celular => celular.id === id);
     console.log(posicion)
 
     if (posicion > -1) {
 
         const celularActualizado = celularesGuardados[posicion];
-
         celularActualizado.cantidad -= 1;
-
         celularesGuardados[posicion] = celularActualizado;
-
 
     }
     if (celularesGuardados[posicion].cantidad === 0) {
         celularesGuardados.splice(posicion)
     }
     renderResumen()
-
-
+    mensaje("eliminado :(")
 }
 
 function nombreCelulares(marca, modelo, id, cantidad, precio) {
@@ -99,61 +92,70 @@ function nombreCelulares(marca, modelo, id, cantidad, precio) {
         duration: 1500,
     }).showToast()
 }
+class pruebaDeDatos {
+    constructor(nombre, apellido, email, direccion) {
+        this.nombre = nombre
+        this.apellido = apellido
+        this.email = email
+        this.direccion = direccion
+        this.info = `<b>Nombre:</b> ${nombre} --><b>Apellido:</b>  ${apellido} --><b>Email:</b>  ${email} --><b>Direccion:</b>  ${direccion} `
+    }
+    mensajeDatos() {
+        return this.info
+    }
+}
+//array, funciones, clases--Final
 
+//BotonEliminar-Inicio
 const btnEliminar = document.getElementById(`btn-eliminar`)
 btnEliminar.addEventListener(`click`, () => {
-
-    nombreMenos("IPHONE", "A32", "1", 1, 1800)
-
+    nombreMenos("IPHONE", "A32", "1", 1, 130.070)
 
 })
+
 const btnEliminar1 = document.getElementById(`btn-eliminar1`)
 btnEliminar1.addEventListener(`click`, () => {
-
-    nombreMenos("SAMSUNG", "A32", "2", 1, 1800)
-
+    nombreMenos("SAMSUNG", "A32", "2", 1, 74.089)
 
 })
+
 const btnEliminar2 = document.getElementById(`btn-eliminar2`)
 btnEliminar2.addEventListener(`click`, () => {
-
-    nombreMenos("MOTOROLA", "G9 POWER", "3", 1, 1800)
-
+    nombreMenos("MOTOROLA", "G9 POWER", "3", 1, 88.699)
 
 })
+
 const btnEliminar3 = document.getElementById(`btn-eliminar3`)
 btnEliminar3.addEventListener(`click`, () => {
-
-    nombreMenos("LG", "XT-615", "4", 1, 1800)
-
+    nombreMenos("LG", "XT-615", "4", 1, 51.430)
 
 })
 
-
-
+//BotonEliminar-Inicio
+//BotonesAgregar-Inicio
 
 const btn1 = document.querySelector(`.btn1`)
-
 btn1.addEventListener(`click`, () => {
-    nombreCelulares("IPHONE", "A32", "1", 1, 1800)
+    nombreCelulares("IPHONE", "A32", "1", 1, 130.070)
 
 })
 
 const btn2 = document.querySelector(`.btn2`)
 btn2.addEventListener(`click`, () => {
-    nombreCelulares("SAMSUNG", "A32", "2", 1, 1800)
+    nombreCelulares("SAMSUNG", "A32", "2", 1, 74.089)
 })
 
 const btn3 = document.querySelector(`.btn3`)
 btn3.addEventListener(`click`, () => {
-    nombreCelulares("MOTOROLA", "G9 POWER", "3", 1, 1800)
+    nombreCelulares("MOTOROLA", "G9 POWER", "3", 1, 88.699)
 })
 
 const btn4 = document.querySelector(`.btn4`)
 btn4.addEventListener(`click`, () => {
-    nombreCelulares("LG", "XT-615", "4", 1, 1800)
+    nombreCelulares("LG", "XT-615", "4", 1, 51.439)
 })
-
+//BotonesAgregar-Final
+//Formulario-Inicio
 const boton = document.getElementById(`guardar`)
 boton.addEventListener(`click`, () => {
     const nombre = document.getElementById(`nombre`).value
@@ -177,29 +179,18 @@ boton.addEventListener(`click`, () => {
 
 
 })
+//Formulario-final
+//Mostrar-Datos-Inicio
 
 const detalles = document.getElementById(`detalles`)
 detalles.addEventListener(`click`, () => {
 
     const datosEntregas = JSON.parse(localStorage.getItem(`datos`))
-
-    class pruebaDeDatos {
-        constructor(nombre, apellido, email, direccion) {
-            this.nombre = nombre
-            this.apellido = apellido
-            this.email = email
-            this.direccion = direccion
-            this.info = `<b>Nombre:</b> ${nombre} --><b>Apellido:</b>  ${apellido} --><b>Email:</b>  ${email} --><b>Direccion:</b>  ${direccion} `
-        }
-        mensaje() {
-            return this.info
-        }
-    }
     const persona1 = new pruebaDeDatos(datosEntregas.nombre, datosEntregas.apellido, datosEntregas.email, datosEntregas.direccion)
 
     const listaDetalles = document.getElementById(`listaDetalles`)
     const row = document.createElement(`li`)
-    row.innerHTML = persona1.mensaje()
+    row.innerHTML = persona1.mensajeDatos()
     listaDetalles.appendChild(row)
 
     const listaCompras = document.getElementById(`listaCompras`)
@@ -207,13 +198,21 @@ detalles.addEventListener(`click`, () => {
 
         const listaProducto = document.createElement(`li`)
         listaProducto.innerHTML = `${celularesGuardados[i].cantidad} uni. ${celularesGuardados[i].marca} = $. ${celularesGuardados[i].precio * celularesGuardados[i].cantidad} Pesos.`
-
+        total.push(celularesGuardados[i].precio * celularesGuardados[i].cantidad)
         listaCompras.appendChild(listaProducto)
     }
 })
+
+
 const finalizar = document.getElementById(`finalizar`)
 finalizar.addEventListener(`click`, () => {
+    const totalCelulares = document.getElementById(`totalCelulares`)
 
+    let suma = 0
+    for (let i = 0; i < total.length; i++) {
+        suma += total[i];
+    }
+    totalCelulares.innerHTML = ` <b> SU PAGO TOTAL ES DE : $ </b> ${suma}`
     Swal.fire({
         position: 'top-end',
         icon: 'success',
@@ -222,12 +221,10 @@ finalizar.addEventListener(`click`, () => {
         showConfirmButton: false,
         timer: 3000,
     })
-
-
-
 })
+//Mostrar-Datos-Final
 
-// clima
+// usando API-Inicio
 window.addEventListener(`load`, () => {
 
     if (navigator.geolocation) {
@@ -313,3 +310,4 @@ window.addEventListener(`load`, () => {
     }
 
 })
+// usando API-Final
