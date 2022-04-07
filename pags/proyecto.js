@@ -259,7 +259,7 @@ window.addEventListener(`load`, () => {
                     temperaturaValor.textContent = `${temp}°C`
 
                     const desc = data.weather[0].description
-                    temperaturaDescripcion.textContent = desc.toUpperCase()
+                    temperaturaDescripcion.textContent = desc
 
                     const lugar = data.name
                     Ubicacion.textContent = lugar

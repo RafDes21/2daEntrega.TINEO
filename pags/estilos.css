@@ -6,6 +6,14 @@
     box-sizing: border-box;
 }
 
+nav {
+    width: 100%;
+}
+
+.row {
+    margin: 0;
+}
+
 body {
     background-color: #71a89a;
     width: 100%;
@@ -16,38 +24,26 @@ header {
     font-family: 'Dosis', sans-serif;
 }
 
+.clim {
+    font-size: 20px;
 
+}
+
+.clim1 {
+    font-size: 20px;
+}
 
 .clima {
-    display: flex;
-    width: 100%;
-    height: 50px;
+
+
+    height: auto;
 
 }
 
-.cajasClima {
-    width: 100%;
-    height: 50px;
-}
-
-.col-md-4 {
-    display: block;
-
-    width: 100%;
-}
-
-.clim {
-    width: 40%;
-    display: contents;
-    font-size: 20px;
-    align-items: center;
-
-}
 
 #icono-animado {
     height: 60px;
     width: 70px;
-
 }
 
 #caja1 {
@@ -68,8 +64,7 @@ header {
 }
 
 .card {
-    justify-content: center;
-    align-items: center;
+
     margin: 4% 7%;
     box-shadow: 3px 3px 8px 4px black;
 
@@ -147,149 +142,114 @@ td {
     text-shadow: 4px 2px black;
 }
 
-/* pix320-Inicio */
-@media screen and (max-width:320px) {
+@media screen and(max-width:440px) {
+    .card {
+        margin: 4% 0;
+    }
+}
+
+/* pix550-Inicio */
+@media screen and (max-width:550px) {
+    .clima {
+        display: flex;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    .row {
+        width: 100%;
+    }
+
+    .col-sm {
+        width: 70%;
+        margin: 0 15%;
+    }
+
+    #caja2 {
+        display: flex;
+        align-items: center;
+        height: auto;
+    }
+
+    #icono-animado {
+        margin-left: 45%;
+    }
+
+    .card {
+        margin: 4% 14%;
+    }
+}
+
+/* pix575-Final */
+/* pix575-Inicio */
+@media screen and (max-width:575px) {
+
+    .row {
+        width: 100%;
+    }
+
+    .col-sm {
+        width: 70%;
+        margin: 0 15%;
+    }
+
+    .card {
+        margin: 4% 14%;
+    }
+}
+
+/* pix575-Final */
+/* pix670-Inicio */
+@media screen and (max-width:670px) {
+
+    .main {
+        padding: 0;
+    }
+
+    .col-sm {
+        padding: 0;
+    }
+}
+
+/* pix670-Final */
+/* pix768-Inicio */
+@media screen and (max-width:767px) {
+
 
     .navbar {
+
         width: 100%;
+
     }
 
     .clima {
         height: auto;
     }
 
-    .row {
-        height: 100%;
-    }
-
-    .col-md-4 {
-        padding: 0;
-        height: 100%;
-
-    }
-
-    .col-sm {
-        margin-left: 0;
-    }
-
-    .card {
-        margin: 0;
-        margin-bottom: 4%;
-    }
-
-    form {
-        width: 80%;
-        margin-left: 10%;
-    }
-
-    .detalles-compra {
-        padding-top: 10%;
-    }
-
-    #totalCelulares {
-        margin-left: 10%;
-    }
-
-    #listaDetalles li {
-        margin-left: 10%;
-    }
-
-    .nombre {
-        width: 30%;
-    }
-
-    .modelo {
-        width: 35%;
-    }
-
-    .id {
-        width: 20%;
-    }
-
-    .cantidad {
-        width: 15%;
-    }
-}
-
-/* pix320-Final */
-
-/* //pix480-Incio */
-@media screen and (max-width:480px) and (min-width:321px) {
-    .navbar {
-        width: 100%;
-    }
-
-    .clima {
-        width: auto;
-        height: 100%;
-        padding: 0;
-        margin: 0;
-    }
-
-    .cajasClima {
-        height: 100%;
-    }
-
-    .col-md-4 {
-        padding: 0;
-        height: 100%;
-        margin-left: 25%;
-    }
-
-    #caja2 {
-        margin-left: 32%;
-    }
-
-
-
-    .col-sm {
-        margin-left: 10%;
-    }
-
-    .nombre {
-        width: 25%;
-    }
-
-    .modelo {
-        width: 45%;
-    }
-
-    .id {
-        width: 15%;
-    }
-
-    .cantidad {
-        width: 15%;
-    }
-
-    form {
-        width: 80%;
-        margin: 0 10%;
-    }
-
-}
-
-/* pix480-Final */
-/* pix768-Inicio */
-@media screen and ((max-width:768px) and (min-width:481px)) {
-
-    .navbar {
-        width: 100%;
-    }
-
-    .row {
-        height: 100%;
-    }
-
-    .col-md-4 {
-        padding: 0;
-        height: 100%;
+    .clim {
+        font-size: 20px;
         padding-left: 3%;
     }
 
-    .col-sm {
-        margin: 0 20%;
+    .clim1 {
+        font-size: 20px;
     }
+
+
+    .row {
+        height: 100%;
+        width: 100%;
+
+    }
+
+    .col-md-4 {
+
+        display: contents;
+    }
+
+
 
     #totalCelulares {
         margin-left: 10%;
