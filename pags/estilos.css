@@ -6,55 +6,59 @@
     box-sizing: border-box;
 }
 
+body {
+    margin-top: 56px;
+}
+
 nav {
     width: 100%;
+}
+.nav-link{
+    transition: all 400ms;
+}
+.nav-link:hover{
+    background-color: rgba(31, 70, 31, 0.699);
+    transform: scale(1.2);
 }
 
 .row {
     margin: 0;
 }
-
-body {
-    background-color: #71a89a;
-    width: 100%;
+.clima{
+    background-image: url(../img/clima.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: beige;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.788);
 }
-
-header {
-
-    font-family: 'Dosis', sans-serif;
-}
-
-.clim {
-    font-size: 20px;
-
-}
-
-.clim1 {
-    font-size: 20px;
-}
-
-.clima {
-
-
-    height: auto;
-
-}
-
-
 #icono-animado {
+    margin-top: -2%;
+    margin-left: 40%;
     height: 60px;
     width: 70px;
 }
 
-#caja1 {
-    padding: 10px;
-    padding-left: 50px
+header {
+    position: fixed;
+    font-family: 'Dosis', sans-serif;
+    top: 0;
+    width: 100%;
+    z-index: 2;
 }
 
-#caja3 {
-    padding: 10px;
+.col-12 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 400ms;
 }
-
+.col-12:hover{
+    transform: translateY(10px);
+    box-shadow: 2px 3px 8px 4px black;
+    border-radius: 10px;
+    
+}
 
 .main {
     background-image: url(../img/fondoForm.jpg);
@@ -64,9 +68,9 @@ header {
 }
 
 .card {
-
-    margin: 4% 7%;
+    margin: 4% 0;
     box-shadow: 3px 3px 8px 4px black;
+    border-radius: 10px ;
 
 }
 
@@ -75,8 +79,38 @@ header {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 60px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
+}
+li{
+    list-style: none;
+    padding-left: 20px;
+}
+.btn-delete{
+    margin-top: 2%;
+    border-radius: 5px;
+    background-color:rgba(155, 12, 12, 0.623);
+    color: azure;
+    transition: all 400ms;
+
+}
+.btn-delete:hover{
+    transform: scale(1.1);
+    background-color: red;
+    color: black;
+}
+.btn-primary{
+    border-radius: 5px;
+    transition: all 400ms;
+}
+.btn-primary:hover{
+    transform: scale(1.1);
+    background-color: rgb(45, 45, 95);
+    color: black;
+    font-weight: 500;
+    
 }
 
 form {
@@ -86,8 +120,8 @@ form {
     height: 470px;
     display: flex;
     flex-direction: column;
-    width: 50%;
-    margin: 0 25%;
+    width: 70%;
+    margin: 5% 15%;
 }
 
 
@@ -99,14 +133,9 @@ input {
 label {
     margin-left: 13%;
 }
-
-li {
-    padding-left: 20px;
-
-}
-
 .table {
     background-color: #99f2c8;
+    margin: 0;
 }
 
 td {
@@ -131,7 +160,7 @@ td {
     display: flex;
     background-color: rgb(58, 54, 54);
     font-family: 'Dosis', sans-serif;
-    padding-top: 10%;
+    padding-top: 5%;
     color: aliceblue;
     flex-direction: column;
 
@@ -141,139 +170,37 @@ td {
     font-size: 30px;
     text-shadow: 4px 2px black;
 }
-
-@media screen and(max-width:440px) {
-    .card {
-        margin: 4% 0;
-    }
+.detalles-compra #listaDetalles li{
+    margin-left: 50px;
+}
+.detalles-compra #listaCompras li{
+    margin-left: 50px;
+}
+#totalCelulares > b{
+    margin-left: 50px;
+}
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    
+   
 }
 
-/* pix550-Inicio */
-@media screen and (max-width:550px) {
-    .clima {
-        display: flex;
-    }
-
-    .row {
-        flex-direction: column;
-    }
-
-    .row {
-        width: 100%;
-    }
-
-    .col-sm {
-        width: 70%;
-        margin: 0 15%;
-    }
-
-    #caja2 {
-        display: flex;
-        align-items: center;
-        height: auto;
-    }
-
-    #icono-animado {
-        margin-left: 45%;
-    }
-
-    .card {
-        margin: 4% 14%;
-    }
+.footer a i{
+    margin: 0 20px;
+    font-size: 40px;
+    color: black;
+    text-shadow: 3px 3px 3px rgba(0, 128, 0, 0.863);
+    transition: all 300ms;
 }
-
-/* pix575-Final */
-/* pix575-Inicio */
-@media screen and (max-width:575px) {
-
-    .row {
-        width: 100%;
-    }
-
-    .col-sm {
-        width: 70%;
-        margin: 0 15%;
-    }
-
-    .card {
-        margin: 4% 14%;
-    }
+.footer a i:hover{
+transform: scale(1.1);
 }
-
-/* pix575-Final */
-/* pix670-Inicio */
-@media screen and (max-width:670px) {
-
-    .main {
-        padding: 0;
-    }
-
-    .col-sm {
-        padding: 0;
-    }
+.footer-final{
+    background-image: url(../img/footer.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-
-/* pix670-Final */
-/* pix768-Inicio */
-@media screen and (max-width:767px) {
-
-
-    .navbar {
-
-        width: 100%;
-
-    }
-
-    .clima {
-        height: auto;
-    }
-
-    .clim {
-        font-size: 20px;
-        padding-left: 3%;
-    }
-
-    .clim1 {
-        font-size: 20px;
-    }
-
-
-    .row {
-        height: 100%;
-        width: 100%;
-
-    }
-
-    .col-md-4 {
-
-        display: contents;
-    }
-
-
-
-    #totalCelulares {
-        margin-left: 10%;
-    }
-
-    #listaDetalles li {
-        margin-left: 10%;
-    }
-
-    .nombre {
-        width: 30%;
-    }
-
-    .modelo {
-        width: 35%;
-    }
-
-    .id {
-        width: 20%;
-    }
-
-    .cantidad {
-        width: 15%;
-    }
-}
-
-/* pix768-Final */

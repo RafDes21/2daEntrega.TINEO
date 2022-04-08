@@ -14,11 +14,11 @@
     <title>Practicas</title>
 </head>
 
-<body>
-    <header class="bg-dark">
+<body id="home">
+    <header class="bg-dark" >
         <div class="container nav">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <a class="navbar-brand" href="#">Navbar</a>
+                <a class="navbar-brand" href="#home"><b>CYBERCELL</b></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -26,13 +26,13 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item ">
-                            <a class="nav-link" href="#"><i class="fas fa-home"></i> INICIO </a>
+                            <a class="nav-link" href="#home"><i class="fas fa-home"></i> INICIO </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa-solid fa-mobile"></i> CELULARES</a>
+                            <a class="nav-link" href="#shop"><i class="fa-solid fa-mobile"></i> CELULARES</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa-solid fa-envelope"></i> CONTACTO</a>
+                            <a class="nav-link" href="#contact"><i class="fa-solid fa-envelope"></i> CONTACTO</a>
                         </li>
 
                     </ul>
@@ -40,30 +40,30 @@
             </nav>
         </div>
     </header>
-    <!-- //datos del clima - Inicio -->
-    <div id="container-fluid " class="clima">
+    <!-- datos del clima - Inicio -->
+    <div id="container " class="clima" >
         <div class="row cajasClima">
-            <div id="caja1 " class="col-md-4">
-                <h1 class="clim text-center" id="temperatura-valor"></h1>
-                <h3 class="clim1 text-center" id="temperatura-descripcion"></h3>
+            <div id="caja1 " class="col-sm-12 col-md-4 col-lg-4">
+                <h1 class="text-center" id="temperatura-valor"></h1>
+                <h3 class="text-center" id="temperatura-descripcion"></h3>
 
             </div>
-            <div id="caja2 " class="col-md-4 caja-icono">
-                <h2 class="clim c2 text-center" id="ubicacion"></h2>
-                <img class=" clim1 text-center " id="icono-animado" src="" alt="">
+            <div id="caja2 " class="col-sm-12 col-md-4 col-lg-4 caja-icono">
+                <h2 class="text-center" id="ubicacion"></h2>
+                <img class="text-center " id="icono-animado" src="" alt="">
             </div>
-            <div id="caja3" class="col-md-4">
-                <h3 class="clim text-center">veloc. de viento</h3>
-                <h1 class="clim1 text-center" id="viento-velocidad"></h1>
+            <div id="caja3" class="col-sm-12 col-md-4 col-lg-4">
+                <h3 class="text-center">veloc. de viento</h3>
+                <h1 class="text-center" id="viento-velocidad"></h1>
             </div>
         </div>
     </div>
     <!-- //datos del clima - Final-->
-    <div class="container-fluid main">
+    <div class="container-fluid main p-0 " id="shop">
 
         <div class="row">
-            <div class="col-sm">
-                <div class="card animate__animated animate__fadeInLeft" style="width: 18rem;">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3 p-0">
+                <div class="card animate__animated animate__fadeInLeft"style="width: 16rem;">
                     <img src="img/celular.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title text-center">IPHONE A32</h5>
@@ -74,14 +74,13 @@
                             <li>Vídeos: 4k.</li>
                         </ul>
                         <input class="btn1 btn-primary" type="button" value="AGREGAR">
-                        <input id="btn-eliminar" type="button" value="eliminar">
+                        <input id="btn-eliminar"class="btn-delete" type="button" value="DELETE">
                     </div>
                 </div>
             </div>
 
-            <div class="col-sm">
-                <div class="card animate__animated animate__fadeInLeft
-                " style="width: 18rem;">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3 p-0">
+                <div class="card animate__animated animate__fadeInLeft" style="width: 16rem;">
                     <img src="img/celular.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title text-center">SAMSUNG A32</h5>
@@ -92,15 +91,15 @@
                             <li>Vídeos: 4k.</li>
                         </ul>
                         <input class="btn2 btn-primary" type="button" value="AGREGAR">
-                        <input id="btn-eliminar1" type="button" value="eliminar">
+                        <input id="btn-eliminar1"class="btn-delete" type="button" value="DELETE">
                     </div>
                 </div>
             </div>
-            <div class="col-sm">
-                <div class="card animate__animated animate__fadeInRight" style="width: 18rem;">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3 p-0">
+                <div class="card animate__animated animate__fadeInRight" style="width: 16rem;">
                     <img src="img/celular.png" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title text-center">MOTOROLA G9 POWER</h5>
+                        <h5 class="card-title text-center">MOTOROLA G9</h5>
                         <ul>
                             <li>Pantalla: 5 pulgadas.</li>
                             <li>Camara frontal: 12px. </li>
@@ -108,12 +107,12 @@
                             <li>Vídeos: 4k.</li>
                         </ul>
                         <input class="btn3 btn-primary" type="button" value="AGREGAR">
-                        <input id="btn-eliminar2" type="button" value="eliminar">
+                        <input id="btn-eliminar2"class="btn-delete" type="button" value="DELETE">
                     </div>
                 </div>
             </div>
-            <div class="col-sm">
-                <div class="card animate__animated animate__fadeInRight" style="width: 18rem;">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3 p-0">
+                <div class="card animate__animated animate__fadeInRight" style="width: 16rem;">
                     <img src="img/celular.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title text-center">LG XT-615</h5>
@@ -124,7 +123,7 @@
                             <li>Vídeos: 4k.</li>
                         </ul>
                         <input class="btn4 btn-primary" type="button" value="AGREGAR">
-                        <input id="btn-eliminar3" type="button" value="eliminar">
+                        <input id="btn-eliminar3"class="btn-delete" type="button" value="DELETE">
                     </div>
                 </div>
             </div>
@@ -132,7 +131,7 @@
     </div>
 
 
-    <table class="table">
+    <table class="table m-0">
         <tr class="thead-dark">
             <th class="nombre">Nombre</th>
             <th class="modelo text-center">Modelo</th>
@@ -145,17 +144,17 @@
     </table>
 
 
-    <div class="datos">
+    <div class="datos"id="contact">
 
         <form class="animate__animated animate__zoomIn" action="" method="" id="formatear">
             <h2 class="text-center my-4">Datos para el envío</h2>
-            <label class="formNombre" for="nombre">Nombre</label>
+            <label class="formNombre" for="nombre"><b>NOMBRE</b></label>
             <input type="text" name="nombre" placeholder="Ingrese su Nombre" id="nombre" required>
-            <label for="apellido">Apellido</label>
+            <label for="apellido"><b>APELLIDO</b></label>
             <input type="text" name="apellido" placeholder="Ingrese su Apellido" id="apellido" required value="">
-            <label for="email">Email</label>
+            <label for="email"><b>EMAIL</b></label>
             <input type="email" name="email" placeholder="Ingrese su email" id="email" required value="">
-            <label for="direccion">Dirección de entrega</label>
+            <label for="direccion"><b>DIRECCION DE ENTREGA</b></label>
             <input type="text" name="direccion" id="direccion" placeholder="ingrese su dirección" required value="">
             <input class="btn my-5 btn-primary" type="button" id="guardar" value="subir">
         </form>
@@ -175,6 +174,14 @@
         <div id="totalCelulares"></div>
         <input class="my-5" type="button" id="finalizar" value="Finalizar Compra">
     </div>
+    <div class="container-fluid footer-final">
+    <div class="container footer">
+        <a class="" href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a class="" href="#"><i class="fa-brands fa-youtube"></i></a>
+        <a class="" href="#"><i class="fa-brands fa-whatsapp"></i></a>
+        <a class="" href="#"><i class="fa-brands fa-facebook-square"></i></a>
+    </div>
+</div>
 
 
 

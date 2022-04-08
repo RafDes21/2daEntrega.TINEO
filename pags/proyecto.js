@@ -1,6 +1,7 @@
 //array, funciones, clases--Inicio
 const celularesGuardados = []
 const total = []
+const cliente = []
 
 function mensaje(text) {
     Toastify({
@@ -20,9 +21,10 @@ function mensajeGuardar(title) {
         icon: 'success',
         title: title,
         showConfirmButton: false,
-        timer: 3000,
+        timer: 2000,
     })
 }
+
 
 function renderResumen() {
     const lista = document.getElementById(`lista`)
@@ -174,16 +176,23 @@ boton.addEventListener(`click`, () => {
 
     const prueba = nombre == `` || apellido == `` || email == `` || direccion == `` || false
     prueba ? mensaje("debe llenar todos los datos") : localStorage.setItem(`datos`, JSON.stringify(datosPersonas), mensajeGuardar('REGISTRO CON EXITO!!'))
+    cliente.push(datosPersonas)
 
     formatear.reset()
 
 
 })
+
 //Formulario-final
 //Mostrar-Datos-Inicio
 
 const detalles = document.getElementById(`detalles`)
 detalles.addEventListener(`click`, () => {
+if (celularesGuardados=="") {
+    mensaje("No Hizo ninguna pedido")
+    
+} else {
+    
 
     const datosEntregas = JSON.parse(localStorage.getItem(`datos`))
     const persona1 = new pruebaDeDatos(datosEntregas.nombre, datosEntregas.apellido, datosEntregas.email, datosEntregas.direccion)
@@ -200,27 +209,24 @@ detalles.addEventListener(`click`, () => {
         listaProducto.innerHTML = `${celularesGuardados[i].cantidad} uni. ${celularesGuardados[i].marca} = $. ${celularesGuardados[i].precio * celularesGuardados[i].cantidad} Pesos.`
         total.push(celularesGuardados[i].precio * celularesGuardados[i].cantidad)
         listaCompras.appendChild(listaProducto)
+        const totalCelulares = document.getElementById(`totalCelulares`)
+
+        let suma = 0
+        for (let i = 0; i < total.length; i++) {
+            suma += total[i];
+        }
+        totalCelulares.innerHTML = ` <b> SU PAGO TOTAL ES DE : $ </b> ${suma}`
+
     }
+}
 })
 
-
+//Mostrar-Datos-Inicio
 const finalizar = document.getElementById(`finalizar`)
 finalizar.addEventListener(`click`, () => {
-    const totalCelulares = document.getElementById(`totalCelulares`)
-
-    let suma = 0
-    for (let i = 0; i < total.length; i++) {
-        suma += total[i];
-    }
-    totalCelulares.innerHTML = ` <b> SU PAGO TOTAL ES DE : $ </b> ${suma}`
-    Swal.fire({
-        position: 'top-end',
-        icon: 'success',
-        title: 'GRACIAS POR SU COMPRA!',
-        text: `Su pedido esta activo`,
-        showConfirmButton: false,
-        timer: 3000,
-    })
+    let finCompra=total == "" || cliente == ""
+    finCompra ? mensaje("Corrobore que todos los espacios esten llenos"):mensajeGuardar("Gracias po su compra... :)")
+    
 })
 //Mostrar-Datos-Final
 
@@ -297,8 +303,7 @@ window.addEventListener(`load`, () => {
                             iconoAnimado.src = 'animated/cloudy-day-1.svg'
 
                             break;
-                        default:
-                            iconoAnimado.src = 'animated/cloudy-day-1.svg'
+
 
                     }
 
